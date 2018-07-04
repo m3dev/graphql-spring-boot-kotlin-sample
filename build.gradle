@@ -2,6 +2,8 @@ buildscript {
 	ext {
 		kotlinVersion = '1.2.41'
 		springBootVersion = '2.0.3.RELEASE'
+		springGraphqlVersion = '4.2.0'
+		javatoolsGraphqlVersion = '5.1.0'
 	}
 	repositories {
 		mavenCentral()
@@ -45,5 +47,8 @@ dependencies {
 	compile('com.fasterxml.jackson.module:jackson-module-kotlin')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	compile("org.jetbrains.kotlin:kotlin-reflect")
+	compile "com.graphql-java:graphiql-spring-boot-starter:$springGraphqlVersion"
+	compile "com.graphql-java:graphql-spring-boot-starter:$springGraphqlVersion"
+	compile "com.graphql-java:graphql-java-tools:$javatoolsGraphqlVersion"
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
