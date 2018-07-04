@@ -2,3 +2,18 @@ type Query {
     # API Version
     version: String!
 }
+
+type Author {
+    id: ID!
+    name: String!
+    books: [Book]!
+}
+
+type Book {
+    id: ID!
+    name: String!
+}
+
+extend type Query {
+    getAuthorById(id: ID!) : Author
+}
