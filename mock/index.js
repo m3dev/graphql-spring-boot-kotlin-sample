@@ -3,11 +3,7 @@ const bodyParser = require('body-parser');
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
 const { addMockFunctionsToSchema, makeExecutableSchema } = require('graphql-tools');
 
-// const typeDefs = require('./type_defs');
-const typeDefs = `
-  type Query { books: [Book] }
-  type Book { title: String, author: String, price: Int }
-`;
+const typeDefs = require('./type_defs');
 const schema = makeExecutableSchema({ typeDefs });
 // const mocks = require('./mocks')
 addMockFunctionsToSchema({ schema });
