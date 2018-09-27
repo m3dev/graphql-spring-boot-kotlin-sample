@@ -5,8 +5,8 @@ const { addMockFunctionsToSchema, makeExecutableSchema } = require('graphql-tool
 
 const typeDefs = require('./type_defs');
 const schema = makeExecutableSchema({ typeDefs });
-// const mocks = require('./mocks')
-addMockFunctionsToSchema({ schema });
+const mocks = require('./mocks')
+addMockFunctionsToSchema({ schema, mocks });
 
 const app = express();
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
